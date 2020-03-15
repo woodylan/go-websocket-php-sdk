@@ -12,6 +12,9 @@
   "require": {
     "php": ">=7"
   },
+  "license" : [
+    "MIT"
+  ],
   "autoload": {
     "psr-4": {
       "Woodylan\\Websocket\\": "src/"
