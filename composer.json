@@ -1,0 +1,20 @@
+{
+  "name": "woodylan/go-websocket-php-sdk",
+  "description": "WebSocket微服务PHP SDK",
+  "authors": [
+    {
+      "name": "woodylan",
+      "email": "woodylan@126.com",
+      "homepage": "https://www.wugenglong.com"
+    }
+  ],
+  "type": "library",
+  "require": {
+    "php": ">=7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Woodylan\\Websocket\\": "src/"
+    }
+  }
+}
