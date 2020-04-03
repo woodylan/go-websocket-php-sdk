@@ -100,15 +100,17 @@ class WsServer
      * @param string $groupName 分组名称
      * @param string $clientId  连接ID
      * @param string $userId    业务系统的用户ID
+     * @param string $extend    业务系统的扩展字段
      * @return array|mixed
      */
-    public function bindToGroup(string $systemId, string $groupName, string $clientId, string $userId = '')
+    public function bindToGroup(string $systemId, string $groupName, string $clientId, string $userId = '', string $extend = '')
     {
         return $this->_request(self::API_URL_BIND_TO_GROUP, $this->_buildParam(
             [
                 'groupName' => $groupName,
                 'clientId'  => $clientId,
                 'userId'    => $userId,
+                'extend'    => $extend,
             ]
         ), $systemId, true);
     }
