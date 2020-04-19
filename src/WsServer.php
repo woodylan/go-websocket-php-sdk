@@ -17,6 +17,7 @@ class WsServer
     const API_URL_BIND_TO_GROUP = '/api/bind_to_group'; //绑定clientId到指定分组
     const API_URL_SEND_TO_GROUP = '/api/send_to_group'; //发送给指定分组
     const API_URL_GET_ONLINE_LIST = '/api/get_online_list'; //获取在线客户端列表
+    const API_URL_CLOSE_CLIENT = '/api/close_client'; //主动关闭连接
 
     /**
      * WsServer constructor.
@@ -151,6 +152,22 @@ class WsServer
         return $this->_request(self::API_URL_GET_ONLINE_LIST, $this->_buildParam(
             [
                 'groupName' => $groupName,
+            ]
+        ), $systemId, true);
+    }
+
+    /**
+     * 主动关闭连接
+     *
+     * @param string $systemId 系统ID
+     * @param string $clientId 连接ID
+     * @return array|mixed
+     */
+    public function closeClient(string $systemId, string $clientId)
+    {
+        return $this->_request(self::API_URL_CLOSE_CLIENT, $this->_buildParam(
+            [
+                'clientId' => $clientId,
             ]
         ), $systemId, true);
     }
